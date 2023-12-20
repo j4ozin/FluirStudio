@@ -1,0 +1,387 @@
+create database Angulo_Superior;
+use Angulo_Superior;
+
+
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 03/05/2023 às 20:18
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Banco de dados: `angulo_superior`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `alunos`
+--
+
+CREATE TABLE `alunos` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `id_turma` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `sexo` enum('M','F') NOT NULL,
+  `nome_pai` varchar(50) NOT NULL,
+  `nome_mae` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `papel` enum('aluno') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `alunos`
+--
+
+INSERT INTO `alunos` (`id`, `nome`, `id_turma`, `id_usuario`, `idade`, `cpf`, `sexo`, `nome_pai`, `nome_mae`, `email`, `telefone`, `data_nascimento`, `endereco`, `papel`) VALUES
+(1, 'João', 1, 1, 16, '11111111111', 'M', 'Jõao Pai', 'Mãe João', 'joão@gmail.com', '11111111', '2007-01-01', 'rua do jão', 'aluno'),
+(2, 'Maria', 2,1, 16, '11111111112', 'F', 'Pai Maria', 'Maria Mãe', 'maria@gmail.com', '22222222', '2007-01-01', 'RUA DA MARIA', 'aluno'),
+(3, 'Pedro', 3, 3, 16, '11111111113', 'M', 'PEDRO PAI', 'MÃE PEDRO', 'PEDRO@GMAIL.COM', '33333333', '2007-01-01', 'RUA DO PEDRO', 'aluno'),
+(4, 'Ana', 4, 4, 16, '11111111114', 'F', 'PAI ANA', 'ANA MÃE', 'ANA@GMAIL.COM', '44444444', '2007-01-01', 'RUA DA ANA', 'aluno'),
+(5, 'Lucas', 5, 5, 16, '11111111115', 'M', 'LUCAS PAI', 'MÃE LUCAS', 'LUCAS@GMAIL.COM', '55555555', '2007-01-01', 'RUA DO LUCAS', 'aluno'),
+(6, 'Laura', 6, 6, 16, '11111111116', 'F', 'PAI LAURA', 'LAURA MÃE', 'LAURA@GMAIL.COM', '66666666', '2007-01-01', 'RUA DA LAURA', 'aluno'),
+(7, 'Tiago', 7, 7, 16, '11111111117', 'M', 'TIAGO PAI', 'MÃE TIAGO', 'TIAGO@GMAIL.COM', '77777777', '2007-01-01', 'RUA DO TIAGO', 'aluno'),
+(8, 'Júlia', 8, 8, 16, '11111111118', 'F', 'PAI JÚLIA', 'JÚLIA MÃE', 'JÚLIA@GMAIL.COM', '88888888', '2007-01-01', 'RUA DA JÚLIA', 'aluno'),
+(9, 'Carlos', 9, 9, 16, '11111111119', 'M', 'CARLOS PAI', 'MÃE CARLOS', 'CARLOS@GMAIL.COM', '99999999', '2007-01-01', 'RUA DO CARLOS', 'aluno');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `disciplinas`
+--
+
+CREATE TABLE `disciplinas` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `disciplinas`
+--
+
+INSERT INTO `disciplinas` (`id`, `nome`) VALUES
+(1, 'português'),
+(2, 'matemática'),
+(3, 'história'),
+(4, 'sociologia'),
+(5, 'geografia'),
+(6, 'empreendedorismo'),
+(7, 'filosofia'),
+(8, 'arte'),
+(9, 'física'),
+(10, 'ed.fisica'),
+(11, 'ed.doméstica'),
+(12, 'direitos humanos'),
+(13, 'química'),
+(14, 'literatura'),
+(15, 'política');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `frequencia`
+--
+
+CREATE TABLE `frequencia` (
+  `id` int(11) NOT NULL,
+  `id_aluno` int(11) NOT NULL,
+  `data` date NOT NULL,
+  `presente` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `frequencia`
+--
+
+INSERT INTO `frequencia` (`id`, `id_aluno`, `data`, `presente`) VALUES
+(35, 6, '2023-04-28', 1),
+(53, 9, '2023-04-28', 1),
+(65, 3, '2023-04-28', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `notas`
+--
+
+CREATE TABLE `notas` (
+  `id` int(11) NOT NULL,
+  `aluno_id` int(11) DEFAULT NULL,
+  `primeira_nota` float DEFAULT NULL,
+  `segunda_nota` float DEFAULT NULL,
+  `recup_semestral_1` float DEFAULT NULL,
+  `nota_semestral1` float DEFAULT NULL,
+  `terceira_nota` float DEFAULT NULL,
+  `quarta_nota` float DEFAULT NULL,
+  `recup_semestral_2` float DEFAULT NULL,
+  `nota_semestral2` float DEFAULT NULL,
+  `nota_final` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `notas`
+--
+
+INSERT INTO `notas` (`id`, `aluno_id`, `primeira_nota`, `segunda_nota`, `recup_semestral_1`, `nota_semestral1`, `terceira_nota`, `quarta_nota`, `recup_semestral_2`, `nota_semestral2`, `nota_final`) VALUES
+(1, 2, 6, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 2, 8, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `professores`
+--
+
+CREATE TABLE `professores` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `papel` enum('professor') NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `cpf` varchar(15) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `conta_bancaria` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `professores`
+--
+
+INSERT INTO `professores` (`id`, `nome`, `papel`, `id_usuario`, `idade`, `cpf`, `email`, `endereco`, `telefone`, `conta_bancaria`) VALUES
+(1, 'Joãozinho', 'professor', 10, 40, '11111111120', 'joãozinho@gmail.com', 'rua do jão', '12121212', 'nubank'),
+(2, 'Mariazinha', 'professor', 11, 50, '11111111121', 'mariazinha@gmail.com', 'rua da maria', '21212121', 'rico');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `professores_disciplinas`
+--
+
+CREATE TABLE `professores_disciplinas` (
+  `id` int(11) NOT NULL,
+  `id_professor` int(11) NOT NULL,
+  `id_disciplina` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `professores_disciplinas`
+--
+
+INSERT INTO `professores_disciplinas` (`id`, `id_professor`, `id_disciplina`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `turmas`
+--
+
+CREATE TABLE `turmas` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `ano` int(11) NOT NULL,
+  `letra` varchar(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `turmas`
+--
+
+INSERT INTO `turmas` (`id`, `nome`, `ano`, `letra`) VALUES
+(1, '1A', 1, 'A'),
+(2, '1B', 1, 'B'),
+(3, '1C', 1, 'C'),
+(4, '2A', 2, 'A'),
+(5, '2B', 2, 'B'),
+(6, '2C', 2, 'C'),
+(7, '3A', 3, 'A'),
+(8, '3B', 3, 'B'),
+(9, '3C', 3, 'C');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `CPF` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `papel` enum('aluno','professor','admin') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `CPF`, `senha`, `papel`) VALUES
+(1, '11111111111', '123', 'aluno'),
+(2, '11111111112', '123', 'aluno'),
+(3, '11111111113', '123', 'aluno'),
+(4, '11111111114', '123', 'aluno'),
+(5, '11111111115', '123', 'aluno'),
+(6, '11111111116', '123', 'aluno'),
+(7, '11111111117', '123', 'aluno'),
+(8, '11111111118', '123', 'aluno'),
+(9, '11111111119', '123', 'aluno'),
+(10, '11111111120', '123', 'professor'),
+(11, '11111111121', '123', 'professor'),
+(12, '11111111122', '123', 'admin');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `alunos`
+--
+ALTER TABLE `alunos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_turma` (`id_turma`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Índices de tabela `disciplinas`
+--
+ALTER TABLE `disciplinas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `frequencia`
+--
+ALTER TABLE `frequencia`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_aluno` (`id_aluno`);
+
+--
+-- Índices de tabela `notas`
+--
+ALTER TABLE `notas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `aluno_id` (`aluno_id`);
+
+--
+-- Índices de tabela `professores`
+--
+ALTER TABLE `professores`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Índices de tabela `professores_disciplinas`
+--
+ALTER TABLE `professores_disciplinas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_professor` (`id_professor`),
+  ADD KEY `id_disciplina` (`id_disciplina`);
+
+--
+-- Índices de tabela `turmas`
+--
+ALTER TABLE `turmas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `alunos`
+--
+ALTER TABLE `alunos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `disciplinas`
+--
+ALTER TABLE `disciplinas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de tabela `frequencia`
+--
+ALTER TABLE `frequencia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
+-- AUTO_INCREMENT de tabela `notas`
+--
+ALTER TABLE `notas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `professores`
+--
+ALTER TABLE `professores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `professores_disciplinas`
+--
+ALTER TABLE `professores_disciplinas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `turmas`
+--
+ALTER TABLE `turmas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `alunos`
+--
+ALTER TABLE `alunos`
+  ADD CONSTRAINT `alunos_ibfk_1` FOREIGN KEY (`id_turma`) REFERENCES `turmas` (`id`),
+  ADD CONSTRAINT `alunos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Restrições para tabelas `frequencia`
+--
+ALTER TABLE `frequencia`
+  ADD CONSTRAINT `frequencia_ibfk_1` FOREIGN KEY (`id_aluno`) REFERENCES `alunos` (`id`);
+
+--
+-- Restrições para tabelas `notas`
+--
+ALTER TABLE `notas`
+  ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`aluno_id`) REFERENCES `alunos` (`id`);
+
+--
+-- Restrições para tabelas `professores`
+--
+ALTER TABLE `professores`
+  ADD CONSTRAINT `professores_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);

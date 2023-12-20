@@ -1,0 +1,562 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*HOME*/
+#logomarca{
+    text-align: center;
+    margin-left: 50px;
+}
+
+#logomarca img{
+    height: 400px;
+    margin-top: 15px;
+}
+
+#line {
+    background-color: rgb(130, 12, 240);
+    padding: 1px;
+}
+
+.entrar {
+    float: center;
+    display: block;
+    padding: 8px 50px;
+    border: none;
+    background-color: rgb(130, 12, 240);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    border-radius: 30px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+   
+/* MENU */
+
+.sair {
+    position: absolute;
+    top: 1%;
+    right: 5%; /* Ajuste para a porcentagem desejada */
+}
+
+
+
+#content{
+    margin: 0;
+    margin-top: 25px;
+    width: auto;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center; 
+
+}
+
+#menu {
+    margin: 0;
+    margin-top: 25px;
+    width: auto;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+    height: auto;
+}
+
+#menu li {
+    display: inline;
+    padding: 8px;
+}
+
+#menu a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background-color: rgb(210, 144, 212);
+    color: black;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+#menu li .active {
+    background-color: rgb(210, 144, 212);
+    color: black;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+/* LOGIN*/
+#login {
+    display: flex;
+    margin: 0 auto;
+    margin-top: -170px;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#erro {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: red;
+    
+}
+
+.card {
+    background-color: rgb(233, 230, 240);
+    padding: 40px;
+    border-radius: 13px;
+    width:280px;
+}
+
+.card-header {
+    padding-bottom: 50px;
+    opacity: 0.8;
+    color: black;
+}
+
+.card-content label {
+    color: black;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.card-content-area {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+}
+
+.card-content-area input {
+    margin-top: 10px;
+    padding:0 5px;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid rgb(130, 12, 240);
+    outline: none;
+    color: black;
+    cursor: pointer;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer .submit {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    background-color: rgb(130, 12, 240);
+    border:none;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card-footer button {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    background-color: rgb(166, 71, 255);
+    border:none;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card-footer a {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.8;
+    color: black;
+    text-decoration: none;
+}
+
+/*CADASTRO*/
+#logomarca2{
+    display: flex;
+    align-items: center;
+}
+
+#logomarca2 img{
+    height: 300px;
+    margin-top: 15px;
+}
+
+.container_form {
+    width: 700px;
+    padding:3px;
+    margin: 0 auto;
+    margin-top: -250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: center;
+    
+}
+
+.container_form h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: black;
+    border-bottom: 1px rgb(210, 144, 212) solid;
+    margin-bottom: 35px;
+    padding-bottom: 5px;
+}
+
+.form_grupo {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: center;
+    
+}
+
+.form_input {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px #f2f2f2 solid;
+    background: #fdfdfd;
+    outline: none;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.submit { width:100%; float:left; }
+.submit_btn {
+    float: center;
+    display: block;
+    padding: 5px 30px;
+    border: none;
+    background-color: rgb(210, 144, 212);
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    border-radius: 30px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.submit_btn:hover { background-color: rgb(130, 12, 240); transform: scale(1.03); }
+
+/* CADASTRADOS */
+#cadastrados{
+    margin-left: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+/*STUDIO*/
+.txtstudiotitle{
+    width: 280px;
+    margin: 0 auto;
+    margin-top: -280px;
+    display: flex;
+    align-items: center;
+    float: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    color: black;
+    border-bottom: 1px rgb(210, 144, 212) solid;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+.txtstudio{
+    margin: 0 300px;
+    position: absolute;
+    display: inline-block;
+    
+    
+}
+
+.txtstudio p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+
+}
+
+.agendar_btn {
+    padding: 5px 30px;
+    border: none;
+    background-color: rgb(210, 144, 212);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    border-radius: 30px;
+    cursor: pointer;     
+}
+
+/*AULAS E PROFESSORES*/
+
+.txtaulastitle{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: -280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    color: black;
+    border-bottom: 1px rgb(210, 144, 212) solid;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+.txtaulas{
+    margin: 0 350px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    float: center; 
+}
+
+.txtaulas p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.prof1 img{
+    height: 300px;
+    margin-top: 250px;
+    margin-left: 70PX;
+    display: inline-block;
+}
+
+.prof1 P{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+    margin: 0 350px;
+    margin-top: -300px
+}
+
+.prof2 img{
+    height: 300px;
+    margin-top: 170px;
+    margin-left: 70PX;
+    display: inline-block;
+}
+
+.prof2 P{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+    margin: 0 350px;
+    margin-top: -330px
+}
+
+/*PLANOS DE AULAS*/
+.txtplanostitle{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: -280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    color: black;
+    border-bottom: 1px rgb(210, 144, 212) solid;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+.txtplanos{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    float: center;
+}
+
+.txtplanos h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+}
+.txtplanos p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+}
+
+/*CONTATO*/
+.txtcontatotitle{
+    width: 360px;
+    margin: 0 auto;
+    margin-top: -280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    color: black;
+    border-bottom: 1px rgb(210, 144, 212) solid;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+.txtcontato{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    float: center;
+}
+
+.txtcontato h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+}
+.txtcontato p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-align: justify;
+}
+
+/* VISUALIZAR PRESENÇA */
+.txtcontato .table {
+        border-collapse: collapse;
+        width: 80%;
+        margin-top: 20px;
+    }
+   
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    th {
+        
+        background-color: rgb(166, 71, 255);
+        color: white;
+    }
+    
+    tr:nth-child(even) {
+        
+        background-color: #f2f2f2;
+    }
+    
+    form {
+        margin-top: 20px;
+    }
+    
+    label, select, input[type="submit"] {
+        margin-bottom: 10px;
+      
+    }
+    
+    select, input[type="submit"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(166, 71, 255);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    
+    }
+    
+    button:hover {
+        background-color: rgb(166, 71, 255);
+    }
+
+/* GERENCIAR USUÁRIOS */
+    
+/* Estilo para os botões e links */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(166, 71, 255);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para o formulário de logout */
+form {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color:  #4e7ab5;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilo para a tabela de usuários */
+p {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+}
